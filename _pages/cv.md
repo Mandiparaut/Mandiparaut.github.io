@@ -8,6 +8,7 @@ redirect_from:
 ---
 
 {% include base_path %}
+**Business & Data Analytics graduate student** with experience in data analysis, reporting, business intelligence, and applied research.
 
 ## Education
 
