@@ -1,7 +1,22 @@
 ---
-title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "GHG Accounting & Reporting Dashboard"
+excerpt: "Power BI dashboard analyzing greenhouse gas (GHG) emissions to support sustainability reporting and business decision-making."
 collection: portfolio
 ---
 
-This is an item in your portfolio. It can be have images or nice text. If you name the file .md, it will be parsed as markdown. If you name the file .html, it will be parsed as HTML. 
+### Project Overview
+Analyzed greenhouse gas (GHG) emissions data to support sustainability reporting and data-driven decision-making for business stakeholders.
+
+### Tools & Technologies
+- Power BI  
+- Excel  
+- SQL  
+
+### Key Contributions
+- Cleaned, validated, and prepared environmental datasets  
+- Designed interactive Power BI dashboards for executive reporting  
+- Translated complex emissions data into actionable insights for stakeholders  
+
+### Outcome
+Improved clarity and usability of emissions reporting and supported data-driven sustainability planning.
+
