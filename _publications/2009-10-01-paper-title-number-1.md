@@ -1,14 +1,27 @@
 ---
-title: "Paper Title Number 1"
+title: "Consequences of Road Expansion on Enterprises: A Case Study of Koteshwor Area"
 collection: publications
 category: manuscripts
-permalink: /publication/2009-10-01-paper-title-number-1
-excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
-date: 2009-10-01
-venue: 'Journal 1'
-slidesurl: 'https://academicpages.github.io/files/slides1.pdf'
-paperurl: 'https://academicpages.github.io/files/paper1.pdf'
-bibtexurl: 'https://academicpages.github.io/files/bibtex1.bib'
-citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
+permalink: /publication/2019-road-expansion-enterprises
+excerpt: "A case study examining the economic and business impacts of road expansion on small enterprises in the Koteshwor area of Nepal."
+date: 2019-01-18
+venue: "SSRN"
+paperurl: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3312240"
+citation: "Raut, Mandipa & Adhikari, Bibhav (2019). Consequences of Road Expansion on Enterprises: A Case Study of Koteshwor Area. SSRN."
 ---
-The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
+
+## Abstract
+This study examines the consequences of road expansion on small business enterprises in the Koteshwor area of Nepal. Using qualitative methods and in-depth interviews, the research analyzes how infrastructure development affects local commerce, employment, and enterprise sustainability.
+
+## Methodology
+- Qualitative research design  
+- In-depth interviews with small business owners  
+- Focus on economic and operational impacts  
+
+## Key Findings
+- Road expansion improved accessibility but disrupted local enterprises  
+- Small businesses faced challenges related to displacement and pollution  
+- Policy planning is critical to balance infrastructure growth and enterprise sustainability  
+
+## Publication Link
+🔗 [View paper on SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3312240)
