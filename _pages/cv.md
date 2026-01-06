@@ -9,56 +9,68 @@ redirect_from:
 
 {% include base_path %}
 
-Education
-======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+## Education
 
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+**Saint Mary’s University, Sobey School of Business** – Halifax, NS  
+*Master of Business Analytics*  
+Sept 2025 – Dec 2026 (Expected)  
+GPA: 4.3 / 4.3 (Fall 2025)
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+**Georgian College** – Barrie, ON  
+*Postgraduate Certificate in Big Data Analytics*  
+May 2024 – Dec 2024  
+GPA: 88.25% | Dean’s List (Summer 2024)
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+**Kathmandu University** – Nepal  
+*Bachelor of Business Information Systems (BBIS)*  
+Aug 2014 – Aug 2018  
+CGPA: 3.61  
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+---
+
+## Professional Experience
+
+**Project Manager – Data Analytics Project**  
+Georgian College / Lakeland Holding Ltd. | Aug 2024 – Dec 2024  
+- Led a GHG accounting and reporting data analysis project  
+- Coordinated a team of 5 to analyze environmental datasets  
+- Presented executive dashboards using Power BI  
+
+**Junior Assistant – Data & Reporting**  
+Citizens Bank International Limited | Jul 2022 – Jan 2024  
+- Performed data integrity checks for financial systems  
+- Built Excel models using Pivot Tables and VLOOKUP  
+- Supported compliance and KYC data quality initiatives  
+
+**Junior Business Analyst**  
+Nepal Shipping and Air Logistics Pvt. Ltd. | Jan 2019 – Apr 2022  
+- Analyzed logistics data to improve operational efficiency  
+- Automated reporting processes, reducing manual work by 30%  
+
+**Banking Intern**  
+Rastriya Banijya Bank Limited | Feb 2018 – Mar 2018  
+- Supported branch operations and customer data management  
+
+---
+
+## Technical & Analytical Skills
+
+- **Programming & Databases:** Python (Pandas, NumPy), SQL, SSMS  
+- **Data Analytics & Visualization:** Power BI, Tableau, Excel, SPSS  
+- **Tools:** Jupyter Notebook, Google Colab, GitHub  
+- **Business Skills:** Data validation, KPI reporting, stakeholder communication  
+
+---
+
+## Publications
+
+- *Consequences of Road Expansion on Enterprises: A Case Study of Koteshwor Area*  
+  SSRN, 2019  
+  https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3312240  
+
+---
+
+## Availability
+
+- Internship availability: **Full-time from May 2026**
+
