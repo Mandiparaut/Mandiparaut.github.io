@@ -1,12 +1,9 @@
 ---
-permalink: /
-
 layout: single
 title: "About Me"
 permalink: /
 author_profile: true
 author: Mandipa Raut
-
 ---
 
 I am a **Business & Data Analytics graduate student** based in **Halifax, Canada**, with hands-on experience in data analysis, reporting, and business intelligence across academic and professional settings.
