@@ -1,5 +1,5 @@
 # Basic Site Settings
-title: "Mandipa Raut | Business & Data Analytics Student"
+title: "Mandipa Raut"
 name: "Mandipa Raut"
 description: "Business & Data Analytics student portfolio"
 
@@ -10,14 +10,24 @@ repository: "Mandiparaut/Mandiparaut.github.io"
 # Sidebar Author Info
 author:
   name: "Mandipa Raut"
-  bio: "Business & Data Analytics graduate student with experience in data analysis, reporting, and business intelligence."
+  bio: "Business & Data Analytics Graduate Student"
   location: "Halifax, NS, Canada"
   email: "mandiparaut@gmail.com"
   avatar: "profile.png"
 
-# Repositories and social links
-github   : "Mandiparaut"
-linkedin : ""
+links:
+    - label: "Email"
+      icon: "fas fa-envelope"
+      url: "mandiparaut@gmail.com"
+
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/Mandiparaut"
+
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://www.linkedin.com/in/mandipa-raut-a09601309/"
+
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
