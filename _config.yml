@@ -14,6 +14,10 @@ author:
   location: "Halifax, NS, Canada"
   email: "mandiparaut@gmail.com"
   avatar: "/images/profile.jpg"
+  
+sidebar:
+  author_profile: true
+
 
   links:
     - label: "Email"
