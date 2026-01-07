@@ -7,8 +7,6 @@ redirect_from:
   - /about.html
 ---
 
-## Hi, I’m Mandipa Raut 👋
-
 I am a **Business & Data Analytics graduate student** based in **Halifax, Canada**, with hands-on experience in data analysis, reporting, and business intelligence across academic and professional settings.
 
 ### 🔍 What I Do
@@ -16,18 +14,18 @@ I am a **Business & Data Analytics graduate student** based in **Halifax, Canada
 - Business intelligence and dashboard development  
 - Research-driven, data-informed decision-making  
 
-### 🧠 My Interests
+### My Interests
 I am particularly interested in:
 - Data analytics and visualization  
 - Business decision-making using data  
 - Research and applied analytics projects  
 
-### 📊 Tools & Skills
+### Tools & Skills
 - **Programming & Data:** Python (Pandas, NumPy), SQL  
 - **Analytics & BI:** Power BI, Tableau, Excel, SPSS  
 - **Other Tools:** Jupyter Notebook, GitHub  
 
-### 🌱 About This Website
+### About This Website
 This website showcases my **projects, academic work, publications, and professional experience**.  
 It serves as a central place to highlight my growth as a data and business analytics professional.
 
