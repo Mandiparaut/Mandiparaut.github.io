@@ -15,10 +15,10 @@ author:
   email: "mandiparaut@gmail.com"
   avatar: "profile.png"
 
-links:
+  links:
     - label: "Email"
       icon: "fas fa-envelope"
-      url: "mandiparaut@gmail.com"
+      url: "mailto:mandiparaut@gmail.com"
 
     - label: "GitHub"
       icon: "fab fa-github"
