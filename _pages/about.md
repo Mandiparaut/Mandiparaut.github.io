@@ -5,7 +5,7 @@ layout: single
 title: "About Me"
 permalink: /
 author_profile: true
-author: mandipa
+author: Mandipa Raut
 
 ---
 
