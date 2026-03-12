@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mandipa Raut — Business & Data Analytics</title>
+<meta name="description" content="Portfolio of Mandipa Raut, Business & Data Analytics graduate student at Saint Mary's University, Halifax NS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0f0f0f; --bg2: #161616; --bg3: #1e1e1e;
+    --text: #e8e4dc; --muted: #7a7a7a; --subtle: #484848;
+    --accent: #c8b89a; --border: #242424; --green: #5baa77;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 15px; line-height: 1.65; min-height: 100vh; }
+  a { color: inherit; text-decoration: none; }
+
+  /* NAV */
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(15,15,15,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+  .nav-inner { max-width: 920px; margin: 0 auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; height: 58px; }
+  .logo { font-family: 'DM Mono', monospace; font-size: 13px; color: var(--accent); letter-spacing: 0.04em; }
+  .nav-links { display: flex; gap: 2px; }
+  .nav-links button { background: none; border: none; font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--muted); cursor: pointer; padding: 6px 12px; border-radius: 6px; transition: all 0.18s; }
+  .nav-links button:hover, .nav-links button.active { color: var(--text); background: var(--bg3); }
+
+  /* LAYOUT */
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 28px; }
+  section { display: none; padding: 56px 0 72px; animation: fadeIn 0.25s ease; }
+  section.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+  /* HERO */
+  .eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--accent); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 22px; display: flex; align-items: center; gap: 8px; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); display: inline-block; flex-shrink: 0; animation: pulse 2.5s ease infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+  h1 { font-size: 50px; font-weight: 300; line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 24px; }
+  h1 em { color: var(--muted); font-style: normal; }
+  .hero-sub { font-size: 16px; color: var(--muted); max-width: 500px; line-height: 1.8; margin-bottom: 40px; }
+  .btns { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 60px; }
+  .btn { display: inline-block; padding: 11px 24px; font-size: 13px; border-radius: 7px; cursor: pointer; transition: all 0.18s; font-family: 'DM Sans', sans-serif; font-weight: 500; }
+  .btn-fill { background: var(--accent); color: #0f0f0f; } .btn-fill:hover { background: #d4c4aa; }
+  .btn-out { background: transparent; color: var(--text); border: 1px solid var(--border); } .btn-out:hover { border-color: var(--subtle); }
+  .stats { display: flex; gap: 48px; padding-top: 44px; border-top: 1px solid var(--border); flex-wrap: wrap; }
+  .sn { font-family: 'DM Mono', monospace; font-size: 30px; font-weight: 400; color: var(--text); }
+  .sl { font-size: 12px; color: var(--muted); margin-top: 5px; letter-spacing: 0.02em; }
+
+  /* SECTION HEADER */
+  .sh { display: flex; align-items: baseline; gap: 14px; margin-bottom: 36px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+  .sh h2 { font-size: 20px; font-weight: 400; } .sh span { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--subtle); }
+
+  /* FILTER TABS */
+  .filters { display: flex; gap: 6px; margin-bottom: 24px; flex-wrap: wrap; }
+  .ftab { background: none; border: 1px solid var(--border); color: var(--muted); font-family: 'DM Sans', sans-serif; font-size: 12px; padding: 5px 14px; border-radius: 20px; cursor: pointer; transition: all 0.18s; }
+  .ftab:hover, .ftab.active { color: var(--text); border-color: var(--subtle); background: var(--bg3); }
+
+  /* PROJECT CARDS */
+  .pgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 22px; transition: border-color 0.2s, transform 0.15s; }
+  .card:hover { border-color: #383838; transform: translateY(-2px); }
+  .card.wide { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; }
+  .card.hidden { display: none !important; }
+  .badge { display: inline-block; font-family: 'DM Mono', monospace; font-size: 10px; padding: 3px 9px; border-radius: 4px; margin-bottom: 11px; letter-spacing: 0.04em; }
+  .b-gold  { background: #22180a; color: #c8a84b; }
+  .b-blue  { background: #0a1520; color: #5b9fd4; }
+  .b-green { background: #0a1a0f; color: #5baa77; }
+  .b-teal  { background: #071a18; color: #4db8a8; }
+  .b-purple{ background: #150a20; color: #a07dd4; }
+  .b-coral { background: #1a0a08; color: #d48070; }
+  .ct { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 7px; }
+  .cd { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 14px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 14px; }
+  .tag { font-family: 'DM Mono', monospace; font-size: 10px; padding: 3px 7px; background: var(--bg3); color: var(--subtle); border: 1px solid var(--border); border-radius: 4px; }
+  .rl { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--accent); cursor: pointer; transition: opacity 0.2s; white-space: nowrap; }
+  .rl:hover { opacity: 0.65; }
+
+  /* ABOUT */
+  .agrid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; }
+  .bio { font-size: 15px; color: var(--muted); line-height: 1.85; }
+  .bio p + p { margin-top: 16px; } .bio strong { color: var(--text); font-weight: 500; }
+  .sstack { display: flex; flex-direction: column; gap: 22px; }
+  .slabel { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 9px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pill { font-size: 12px; padding: 5px 12px; background: var(--bg3); color: var(--muted); border: 1px solid var(--border); border-radius: 20px; }
+
+  /* CV */
+  .cvb + .cvb { margin-top: 44px; padding-top: 44px; border-top: 1px solid var(--border); }
+  .cvst { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 24px; }
+  .ee + .ee { margin-top: 24px; }
+  .cs { font-size: 15px; font-weight: 500; color: var(--text); }
+  .cd2 { font-size: 14px; color: var(--muted); font-style: italic; margin-top: 3px; }
+  .cm { font-size: 13px; color: var(--subtle); margin-top: 3px; }
+  .cg { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--accent); margin-top: 4px; }
+  .xe + .xe { margin-top: 28px; }
+  .cr { font-size: 15px; font-weight: 500; color: var(--text); }
+  .co { font-size: 13px; color: var(--muted); margin-top: 3px; }
+  .blist { margin-top: 10px; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .blist li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; }
+  .blist li::before { content: '–'; position: absolute; left: 0; color: var(--subtle); }
+  .srow { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+  .sri { font-size: 13px; color: var(--muted); } .sri strong { color: var(--text); font-weight: 500; }
+  .avbox { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+  .avbox span { font-size: 13px; color: var(--muted); } .avbox strong { color: var(--text); font-weight: 500; }
+
+  /* PUBLICATIONS */
+  .pcard { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 28px; }
+  .pj { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--accent); margin-bottom: 12px; }
+  .pt { font-size: 16px; font-weight: 500; color: var(--text); margin-bottom: 12px; line-height: 1.4; }
+  .pa { font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 16px; }
+  .pc { font-size: 12px; color: var(--subtle); font-style: italic; margin-bottom: 16px; line-height: 1.6; }
+
+  /* CONTACT */
+  .cgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: start; }
+  .ci { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 26px; }
+  .clinks { display: flex; flex-direction: column; gap: 10px; }
+  .clink { display: flex; align-items: center; gap: 14px; padding: 14px 18px; background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; cursor: pointer; transition: border-color 0.2s; text-decoration: none; }
+  .clink:hover { border-color: #383838; }
+  .cico { width: 36px; height: 36px; border-radius: 7px; background: var(--bg3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--muted); }
+  .cn { font-size: 13px; font-weight: 500; color: var(--text); }
+  .csub { font-size: 11px; color: var(--muted); font-family: 'DM Mono', monospace; margin-top: 2px; }
+  .acard { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 28px; }
+  .atitle { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .adesc { font-size: 13px; color: var(--muted); line-height: 1.7; }
+  .adet { margin-top: 18px; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--accent); }
+
+  /* RESPONSIVE */
+  @media (max-width: 680px) {
+    h1 { font-size: 34px; }
+    .pgrid { grid-template-columns: 1fr; }
+    .card.wide { flex-direction: column; }
+    .agrid { grid-template-columns: 1fr; gap: 36px; }
+    .cgrid { grid-template-columns: 1fr; }
+    .stats { gap: 28px; }
+    .nav-links button { padding: 6px 8px; font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo">mandipa raut</div>
+    <div class="nav-links">
+      <button class="active" onclick="nav('home',this)">home</button>
+      <button onclick="nav('projects',this)">projects</button>
+      <button onclick="nav('about',this)">about</button>
+      <button onclick="nav('cv',this)">cv</button>
+      <button onclick="nav('publications',this)">publications</button>
+      <button onclick="nav('contact',this)">contact</button>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- HOME -->
+<section id="home" class="active">
+  <div class="eyebrow"><span class="dot"></span>Available full-time from May 2026 · Halifax, NS</div>
+  <h1>Turning data<br><em>into decisions</em><br>that matter</h1>
+  <p class="hero-sub">Business & Data Analytics grad student at Saint Mary's University. I build AI agents, analytics dashboards, and ML tools — with 2 competition placements and 6 years of professional experience.</p>
+  <div class="btns">
+    <span class="btn btn-fill" onclick="nav('projects',document.querySelectorAll('.nav-links button')[1])">View projects</span>
+    <span class="btn btn-out" onclick="nav('cv',document.querySelectorAll('.nav-links button')[3])">View CV</span>
+    <span class="btn btn-out" onclick="nav('contact',document.querySelectorAll('.nav-links button')[5])">Get in touch</span>
+  </div>
+  <div class="stats">
+    <div><div class="sn">4.3</div><div class="sl">GPA · Fall 2025</div></div>
+    <div><div class="sn">2</div><div class="sl">Competition placements</div></div>
+    <div><div class="sn">8</div><div class="sl">Projects</div></div>
+    <div><div class="sn">6 yrs</div><div class="sl">Professional experience</div></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="sh"><h2>Projects</h2><span>8 projects</span></div>
+  <div class="filters">
+    <button class="ftab active" onclick="filter('all',this)">All</button>
+    <button class="ftab" onclick="filter('ai',this)">AI & Agents</button>
+    <button class="ftab" onclick="filter('analytics',this)">Analytics & BI</button>
+    <button class="ftab" onclick="filter('ml',this)">ML & Data Science</button>
+    <button class="ftab" onclick="filter('competition',this)">Competitions</button>
+  </div>
+  <div class="pgrid">
+
+    <div class="card wide" data-cat="competition analytics">
+      <div>
+        <div class="badge b-gold">Top 6 finalist · CGI DataJam 2026 · SMU</div>
+        <div class="ct">ALC Mismatch Dashboard</div>
+        <div class="cd">Flask dashboard using real Nova Scotia open data to map ALC hospital bed mismatch and model home care redirection impact. Identified where patients could be redirected to home care to free up acute beds across NS hospitals.</div>
+        <div class="tags"><span class="tag">Flask</span><span class="tag">Python</span><span class="tag">HTML</span><span class="tag">Open Data NS</span><span class="tag">Healthcare</span></div>
+      </div>
+      <a class="rl" href="https://github.com/Mandiparaut/ALC-Mismatch-Dashboard-DataJam2026" target="_blank" style="flex-shrink:0">View repo →</a>
+    </div>
+
+    <div class="card wide" data-cat="competition ml analytics">
+      <div>
+        <div class="badge b-purple">RBC HubHacks 2025 · Virtusa × Digital Nova Scotia</div>
+        <div class="ct">N.O.D — Community Nutrition Index (CNI) Analysis</div>
+        <div class="cd">Built a composite Community Nutrition Index for 120 Nova Scotia communities combining nutrition deficiency, food insecurity, socioeconomic, and agricultural data. Applied K-Means clustering to identify high-risk zones, Folium geospatial heatmaps, and LSTM neural networks for predictive modelling. Proposed a multi-channel food distribution strategy across food banks, supermarkets, and community hubs.</div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">K-Means</span><span class="tag">LSTM</span><span class="tag">Folium</span><span class="tag">sklearn</span><span class="tag">NS Open Data</span><span class="tag">Food Security</span></div>
+      </div>
+      <a class="rl" href="https://github.com/Mandiparaut/NOD_CNI_Analysis" target="_blank" style="flex-shrink:0">View repo →</a>
+    </div>
+
+    <div class="card" data-cat="ai">
+      <div class="badge b-blue">AI · LangGraph · HITL</div>
+      <div class="ct">MRI Appointment Assistant</div>
+      <div class="cd">Middleware-driven LangGraph workflow with human-in-the-loop review for MRI appointment scheduling. MBAN 5510 final project at Saint Mary's University.</div>
+      <div class="tags"><span class="tag">LangGraph</span><span class="tag">Python</span><span class="tag">HITL</span><span class="tag">Healthcare</span></div>
+      <a class="rl" href="https://github.com/Mandiparaut/appointment-assistant" target="_blank">View repo →</a>
+    </div>
+
+    <div class="card" data-cat="ai">
+      <div class="badge b-blue">AI · Multi-agent · OpenAI</div>
+      <div class="ct">PhD Email Agent</div>
+      <div class="cd">Multi-agent system using LangGraph to generate personalized PhD interest emails with OpenAI GPT. Automates outreach research and drafting across multiple supervisors.</div>
+      <div class="tags"><span class="tag">LangGraph</span><span class="tag">OpenAI</span><span class="tag">Python</span></div>
+      <a class="rl" href="https://github.com/Mandiparaut/LangGraph-PhD-Email-Agent" target="_blank">View repo →</a>
+    </div>
+
+    <div class="card" data-cat="ai">
+      <div class="badge b-teal">AI · LangChain · Multi-API</div>
+      <div class="ct">Retirement Travel Planner</div>
+      <div class="cd">LangChain agent (v1.2+) that generates personalized multi-city retirement trip plans using real-time weather forecasts, air quality analysis, and nearby attraction discovery via Google Maps, Google Places, and Open-Meteo APIs. Saves reports as timestamped TXT and JSON files.</div>
+      <div class="tags"><span class="tag">LangChain</span><span class="tag">Python</span><span class="tag">Google Maps API</span><span class="tag">Open-Meteo</span><span class="tag">Agentic AI</span></div>
+      <a class="rl" href="https://github.com/Mandiparaut/Michaels-retirement-travel-planner" target="_blank">View repo →</a>
+    </div>
+
+    <div class="card" data-cat="ai ml">
+      <div class="badge b-teal">RAG · Research</div>
+      <div class="ct">Vanilla vs Agentic RAG</div>
+      <div class="cd">Head-to-head comparison of vanilla vs agentic RAG pipelines using Nova Scotia Health brain health data. Evaluated retrieval quality, response accuracy, and pipeline complexity.</div>
+      <div class="tags"><span class="tag">RAG</span><span class="tag">Python</span><span class="tag">NS Health</span><span class="tag">LLM</span></div>
+      <a class="rl" href="https://github.com/Mandiparaut/Project2_RAG" target="_blank">View repo →</a>
+    </div>
+
+    <div class="card" data-cat="analytics">
+      <div class="badge b-green">Power BI · Sustainability</div>
+      <div class="ct">GHG Accounting Dashboard</div>
+      <div class="cd">Power BI dashboard analyzing greenhouse gas emissions for sustainability reporting and executive decision-making. Led a team of 5 at Georgian College / Lakeland Holding Ltd.</div>
+      <div class="tags"><span class="tag">Power BI</span><span class="tag">Python</span><span class="tag">SQL Server</span><span class="tag">SARIMAX</span><span class="tag">XGBoost</span></div>
+      <a class="rl" href="https://github.com/Mandiparaut/GHG-Case-Study/raw/main/GHG_Case_Study_Mandipa_Raut.pdf" target="_blank">View case study →</a>
+    </div>
+
+    <div class="card" data-cat="ml analytics">
+      <div class="badge b-coral">R · Shiny · Statistics</div>
+      <div class="ct">Nonparametric Smoothing App</div>
+      <div class="cd">Interactive Shiny app for teaching nonparametric smoothing with real-time visualization of kernel methods, moving averages, and local regression techniques.</div>
+      <div class="tags"><span class="tag">R</span><span class="tag">Shiny</span><span class="tag">Statistics</span><span class="tag">Education</span></div>
+      <a class="rl" href="https://github.com/Mandiparaut/Dynamic-Nonparametric-Smoothing-Visualization-Improved-version-" target="_blank">View repo →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="sh"><h2>About</h2><span>background & skills</span></div>
+  <div class="agrid">
+    <div class="bio">
+      <p>I'm <strong>Mandipa Raut</strong>, a Business & Data Analytics graduate student at Saint Mary's University (Sobey School of Business) in Halifax, NS, with a 4.3 GPA.</p>
+      <p>I have hands-on experience in <strong>data analysis, reporting, and business intelligence</strong> across academic and professional settings — from banking and logistics to healthcare and sustainability.</p>
+      <p>My recent work focuses on <strong>agentic AI workflows</strong> (LangGraph, LangChain), <strong>healthcare analytics</strong> with NS open data, geospatial analysis, and ML clustering. I competed at CGI DataJam 2026 (Top 6) and RBC HubHacks 2025.</p>
+      <p>I'm particularly interested in <strong>data analytics, AI/ML</strong>, business decision-making using data, and applied research projects with real-world impact.</p>
+    </div>
+    <div class="sstack">
+      <div>
+        <div class="slabel">Programming & data</div>
+        <div class="pills"><span class="pill">Python</span><span class="pill">Pandas</span><span class="pill">NumPy</span><span class="pill">SQL</span><span class="pill">SSMS</span><span class="pill">R</span></div>
+      </div>
+      <div>
+        <div class="slabel">AI & ML</div>
+        <div class="pills"><span class="pill">LangGraph</span><span class="pill">LangChain</span><span class="pill">OpenAI GPT</span><span class="pill">RAG</span><span class="pill">LSTM</span><span class="pill">K-Means</span></div>
+      </div>
+      <div>
+        <div class="slabel">Analytics & BI</div>
+        <div class="pills"><span class="pill">Power BI</span><span class="pill">Tableau</span><span class="pill">Excel</span><span class="pill">SPSS</span><span class="pill">Shiny</span><span class="pill">Folium</span></div>
+      </div>
+      <div>
+        <div class="slabel">Tools</div>
+        <div class="pills"><span class="pill">Jupyter</span><span class="pill">Google Colab</span><span class="pill">GitHub</span><span class="pill">Flask</span></div>
+      </div>
+      <div>
+        <div class="slabel">Business skills</div>
+        <div class="pills"><span class="pill">Data validation</span><span class="pill">KPI reporting</span><span class="pill">Stakeholder communication</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CV -->
+<section id="cv">
+  <div class="sh"><h2>CV</h2><span>full background</span></div>
+
+  <div class="cvb">
+    <div class="cvst">Education</div>
+    <div class="ee">
+      <div class="cs">Saint Mary's University — Sobey School of Business</div>
+      <div class="cd2">Master of Business Analytics</div>
+      <div class="cm">Halifax, NS · Sept 2025 – Dec 2026 (Expected)</div>
+      <div class="cg">GPA 4.3 / 4.3 · Fall 2025</div>
+    </div>
+    <div class="ee">
+      <div class="cs">Georgian College</div>
+      <div class="cd2">Postgraduate Certificate in Big Data Analytics</div>
+      <div class="cm">Barrie, ON · May 2024 – Dec 2024</div>
+      <div class="cg">GPA 88.25% · Dean's List (Summer 2024)</div>
+    </div>
+    <div class="ee">
+      <div class="cs">Kathmandu University</div>
+      <div class="cd2">Bachelor of Business Information Systems (BBIS)</div>
+      <div class="cm">Nepal · Aug 2014 – Aug 2018</div>
+      <div class="cg">CGPA 3.61</div>
+    </div>
+  </div>
+
+  <div class="cvb">
+    <div class="cvst">Professional experience</div>
+    <div class="xe">
+      <div class="cr">Project Manager – Data Analytics Project</div>
+      <div class="co">Georgian College / Lakeland Holding Ltd. · Aug 2024 – Dec 2024</div>
+      <ul class="blist">
+        <li>Led a GHG accounting and reporting data analysis project</li>
+        <li>Coordinated a team of 5 to analyze environmental datasets</li>
+        <li>Presented executive dashboards using Power BI</li>
+      </ul>
+    </div>
+    <div class="xe">
+      <div class="cr">Junior Assistant – Data & Reporting</div>
+      <div class="co">Citizens Bank International Limited · Jul 2022 – Jan 2024</div>
+      <ul class="blist">
+        <li>Performed data integrity checks for financial systems</li>
+        <li>Built Excel models using Pivot Tables and VLOOKUP</li>
+        <li>Supported compliance and KYC data quality initiatives</li>
+      </ul>
+    </div>
+    <div class="xe">
+      <div class="cr">Junior Business Analyst</div>
+      <div class="co">Nepal Shipping and Air Logistics Pvt. Ltd. · Jan 2019 – Apr 2022</div>
+      <ul class="blist">
+        <li>Analyzed logistics data to improve operational efficiency</li>
+        <li>Automated reporting processes, reducing manual work by 30%</li>
+      </ul>
+    </div>
+    <div class="xe">
+      <div class="cr">Banking Intern</div>
+      <div class="co">Rastriya Banijya Bank Limited · Feb 2018 – Mar 2018</div>
+      <ul class="blist">
+        <li>Supported branch operations and customer data management</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="cvb">
+    <div class="cvst">Technical & analytical skills</div>
+    <div class="srow">
+      <div class="sri"><strong>Programming & databases:</strong> Python (Pandas, NumPy, sklearn), SQL, SSMS, R</div>
+      <div class="sri"><strong>AI & ML:</strong> LangGraph, LangChain, OpenAI GPT, RAG, LSTM, K-Means clustering</div>
+      <div class="sri"><strong>Analytics & visualization:</strong> Power BI, Tableau, Excel, SPSS, Shiny, Folium</div>
+      <div class="sri"><strong>Tools:</strong> Jupyter Notebook, Google Colab, GitHub, Flask</div>
+      <div class="sri"><strong>Business skills:</strong> Data validation, KPI reporting, stakeholder communication</div>
+    </div>
+  </div>
+
+  <div class="cvb">
+    <div class="cvst">Availability</div>
+    <div class="avbox"><span class="dot"></span><span>Full-time from <strong>May 2026</strong></span></div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="sh"><h2>Publications</h2><span>research</span></div>
+  <div class="pcard">
+    <div class="pj">SSRN · 2019</div>
+    <div class="pt">Consequences of Road Expansion on Enterprises: A Case Study of Koteshwor Area</div>
+    <div class="pa">A case study examining the economic and business impacts of road expansion on small enterprises in the Koteshwor area of Nepal.</div>
+    <div class="pc">Raut, Mandipa & Adhikari, Bibhav (2019). Consequences of Road Expansion on Enterprises: A Case Study of Koteshwor Area. SSRN.</div>
+    <a class="rl" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3312240" target="_blank">Download paper →</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="sh"><h2>Contact</h2><span>let's connect</span></div>
+  <div class="cgrid">
+    <div>
+      <p class="ci">Based in Halifax and open to data analytics, AI/ML, and business intelligence opportunities. Available full-time from May 2026.</p>
+      <div class="clinks">
+        <a class="clink" href="/cdn-cgi/l/email-protection#177a7679737e67766576626357707a767e7b3974787a">
+          <div class="cico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg></div>
+          <div><div class="cn">Email</div><div class="csub"><span class="__cf_email__" data-cfemail="f19c909f9598819083908485b1969c90989ddf929e9c">[email&#160;protected]</span></div></div>
+        </a>
+        <a class="clink" href="https://linkedin.com/in/mandipa-raut" target="_blank">
+          <div class="cico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2"/><line x1="8" y1="11" x2="8" y2="16"/><line x1="8" y1="8" x2="8" y2="8.01"/><line x1="12" y1="16" x2="12" y2="11"/><path d="M16 16v-3a2 2 0 0 0-4 0"/></svg></div>
+          <div><div class="cn">LinkedIn</div><div class="csub">mandipa-raut</div></div>
+        </a>
+        <a class="clink" href="https://github.com/Mandiparaut" target="_blank">
+          <div class="cico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></div>
+          <div><div class="cn">GitHub</div><div class="csub">Mandiparaut</div></div>
+        </a>
+      </div>
+    </div>
+    <div class="acard">
+      <div class="atitle"><span class="dot"></span>Open to opportunities</div>
+      <div class="adesc">Data analytics · Business intelligence · AI/ML engineering · Healthcare analytics · Graduate research roles</div>
+      <div class="adet">Full-time from May 2026 · Halifax, NS or remote</div>
+    </div>
+  </div>
+</section>
+
+</div><!-- end .wrap -->
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  function nav(id, btn) {
+    document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    if (btn) btn.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  function filter(cat, btn) {
+    document.querySelectorAll('.ftab').forEach(b => b.classList.remove('active'));
+    btn.clas
