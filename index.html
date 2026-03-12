@@ -143,12 +143,12 @@
   <div class="nav-inner">
     <div class="logo">mandipa raut</div>
     <div class="nav-links">
-      <button class="active" onclick="nav('home',this)">home</button>
-      <button onclick="nav('projects',this)">projects</button>
-      <button onclick="nav('about',this)">about</button>
-      <button onclick="nav('cv',this)">cv</button>
-      <button onclick="nav('publications',this)">publications</button>
-      <button onclick="nav('contact',this)">contact</button>
+      <button class="active" onclick="goTo('home',this)">home</button>
+      <button onclick="goTo('projects',this)">projects</button>
+      <button onclick="goTo('about',this)">about</button>
+      <button onclick="goTo('cv',this)">cv</button>
+      <button onclick="goTo('publications',this)">publications</button>
+      <button onclick="goTo('contact',this)">contact</button>
     </div>
   </div>
 </nav>
@@ -161,9 +161,9 @@
   <h1>Turning data<br><em>into decisions</em><br>that matter</h1>
   <p class="hero-sub">Business & Data Analytics grad student at Saint Mary's University. I build AI agents, analytics dashboards, and ML tools — with 2 competition placements and 6 years of professional experience.</p>
   <div class="btns">
-    <span class="btn btn-fill" onclick="nav('projects',document.querySelectorAll('.nav-links button')[1])">View projects</span>
-    <span class="btn btn-out" onclick="nav('cv',document.querySelectorAll('.nav-links button')[3])">View CV</span>
-    <span class="btn btn-out" onclick="nav('contact',document.querySelectorAll('.nav-links button')[5])">Get in touch</span>
+    <span class="btn btn-fill" onclick="goTo('projects',document.querySelectorAll('.nav-links button')[1])">View projects</span>
+    <span class="btn btn-out" onclick="goTo('cv',document.querySelectorAll('.nav-links button')[3])">View CV</span>
+    <span class="btn btn-out" onclick="goTo('contact',document.querySelectorAll('.nav-links button')[5])">Get in touch</span>
   </div>
   <div class="stats">
     <div><div class="sn">4.3</div><div class="sl">GPA · Fall 2025</div></div>
@@ -415,7 +415,7 @@
 </div><!-- end .wrap -->
 
 <script>
-  function nav(id, btn) {
+  function goTo(id, btn) {
     document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
     document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
     document.getElementById(id).classList.add('active');
